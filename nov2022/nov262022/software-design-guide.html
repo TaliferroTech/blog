@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Creating Effective Software Design Specifications: A Guide</title>
+    <meta name="description" content="Learn how to craft a detailed software design specification. This guide covers key components, from system overview to detailed design elements.">
+    <meta name="keywords" content="Software Design Specification, System Architecture, Detailed Design, Software Development, Design Considerations, API Design, Software Components, Development Methods, System Overview, Architectural Strategies, Software Engineering, Design Document, Coding Guidelines, Software Constraints, Interface Design, Software Glossary, Design Best Practices">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cinzel:400,700%7CRaleway:500,500i,600,700%7CMaterial+Icons&amp;display=swap"/>
+    <link rel="stylesheet" type="text/css" href="../../css/vendor.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+    <meta name="author" content="Taliferro Group">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="content-language" content="en">
+    <meta property="og:title" content="Creating Effective Software Design Specifications: A Guide">
+    <meta property="og:description" content="Learn how to craft a detailed software design specification. This guide covers key components, from system overview to detailed design elements.">
+    <meta property="og:image" content="https://blog.taliferro.com/img/blog/software-design-guide.webp">
+    <meta property="og:url" content="https://blog.taliferro.com/nov2022/nov262022/software-design-guide.html">
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@TaliferroLLC" />
+    <meta name="twitter:title" content="Creating Effective Software Design Specifications: A Guide" />
+    <meta name="twitter:description" content="Learn how to craft a detailed software design specification. This guide covers key components, from system overview to detailed design elements.">
+    <meta name="twitter:image" content="https://blog.taliferro.com/img/blog/software-design-guide.webp" />
+    <meta name="twitter:url" content="https://blog.taliferro.com/nov2022/nov262022/software-design-guide.html">
+    
+    <link rel="canonical" href="https://blog.taliferro.com/nov2022/nov262022/software-design-guide.html">
+    
+    <link rel="manifest" href="../../img/general/manifest.json" />
+    <link rel="icon" type="image/x-icon" href="../../img/general/favicon.ico">
+    <link rel="apple-touch-icon" href="../../img/general/apple-touch-icon.png">
+    <link rel='mask-icon' href='../../img/general/safari-pinned-tab.svg' color='#5195d9'>
+      <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://blog.taliferro.com/nov2022/nov262022/software-design-guide.html"
+        },
+        "headline": "Creating Effective Software Design Specifications: A Guide",
+        "description": "Learn how to craft a detailed software design specification. This guide covers key components, from system overview to detailed design elements.",
+        "image": "https://blog.taliferro.com/img/blog/software-design-guide.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers"
+        },
+        "datePublished": "2022-11-26",
+        "dateModified": "2023-12-21",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  </head>
+  <body>
+    <div data-barba="wrapper">
+      <div class="preloader text-center bg-dark-2" id="js-preloader" data-arts-theme-text="light">
+        <div class="preloader__content">
+          <div class="preloader__header mt-auto">
+            <div class="preloader__heading h2">Taliferro Group</div>
+            <div class="preloader__subline small-caps mt-1">Software Design</div>
+          </div>
+          <div class="preloader__counter h5"><span class="preloader__counter-number preloader__counter-current">0</span><span class="preloader__counter-divider">&nbsp;&nbsp;/&nbsp;&nbsp;</span><span class="preloader__counter-number preloader__counter-total">100</span></div>
+          <div class="preloader__circle"></div>
+        </div>
+      </div>
+      <svg class="spinner d-lg-none" id="js-spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="spinner__path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
+      <div class="curtain transition-curtain" id="js-page-transition-curtain">
+        <div class="curtain__wrapper-svg">
+          <svg class="curtain-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path class="curtain-svg__normal" d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,0 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_top-desktop" d="M0,300 C305.333333,100 625.333333,0 960,0 C1294.66667,0 1614.66667,100 1920,300 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,300 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_top-mobile" d="M0,150 C305.333333,50 625.333333,0 960,0 C1294.66667,0 1614.66667,50 1920,150 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,150 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_bottom-desktop" d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,980 1294.66667,930 960,930 C625.333333,930 305.333333,980 0,1080 L0,0 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_bottom-mobile" d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,1030 1294.66667,1005 960,1005 C625.333333,1005 305.333333,1030 0,1080 L0,0 Z"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="header-curtain curtain" id="js-header-curtain">
+        <div class="curtain__wrapper-svg">
+          <svg class="curtain-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path class="curtain-svg__normal" d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,0 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_top-desktop" d="M0,300 C305.333333,100 625.333333,0 960,0 C1294.66667,0 1614.66667,100 1920,300 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,300 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_top-mobile" d="M0,150 C305.333333,50 625.333333,0 960,0 C1294.66667,0 1614.66667,50 1920,150 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,150 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_bottom-desktop" d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,980 1294.66667,930 960,930 C625.333333,930 305.333333,980 0,1080 L0,0 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_bottom-mobile" d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,1030 1294.66667,1005 960,1005 C625.333333,1005 305.333333,1030 0,1080 L0,0 Z"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="header-curtain header-curtain_transition curtain" id="js-header-curtain-transition">
+        <div class="curtain__wrapper-svg">
+          <svg class="curtain-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path class="curtain-svg__normal" d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,0 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_top-desktop" d="M0,300 C305.333333,100 625.333333,0 960,0 C1294.66667,0 1614.66667,100 1920,300 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,300 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_top-mobile" d="M0,150 C305.333333,50 625.333333,0 960,0 C1294.66667,0 1614.66667,50 1920,150 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,150 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_bottom-desktop" d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,980 1294.66667,930 960,930 C625.333333,930 305.333333,980 0,1080 L0,0 Z"></path>
+            <path class="curtain-svg__curve curtain-svg__curve_bottom-mobile" d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,1030 1294.66667,1005 960,1005 C625.333333,1005 305.333333,1030 0,1080 L0,0 Z"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="cursor" id="js-cursor">
+        <div class="cursor__wrapper">
+          <div class="cursor__follower">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <circle id="inner" cx="25" cy="25" r="24" style="opacity: 0.6;"></circle>
+              <circle id="outer" cx="25" cy="25" r="24" style="stroke-dashoffset: 252.327; stroke-dasharray: 0px, 999999px;"></circle>
+            </svg>
+          </div>
+          <div class="cursor__arrows">
+            <div class="cursor__arrow cursor__arrow_up material-icons">keyboard_arrow_up</div>
+            <div class="cursor__arrow cursor__arrow_down material-icons">keyboard_arrow_down</div>
+            <div class="cursor__arrow cursor__arrow_left material-icons">keyboard_arrow_left</div>
+            <div class="cursor__arrow cursor__arrow_right material-icons">keyboard_arrow_right</div>
+          </div>
+          <div class="cursor__label"></div>
+          <div class="cursor__icon material-icons"></div>
+        </div>
+      </div>
+      <header class="header header_menu-right header_fixed container-fluid js-header-sticky" id="page-header" data-arts-theme-text="light" data-arts-header-sticky-theme="bg-white" data-arts-header-logo="secondary" data-arts-header-sticky-logo="primary" data-arts-header-overlay-theme="light" data-arts-header-overlay-background="#ffffff">
+        <div class="header__container header__controls">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-auto header__col header__col-left"><a class="logo" href="../../index.html">
+                <div class="logo__wrapper-img">
+                  <img class="logo__img-primary" src="../../img/general/taliferro-group-black.png" alt="Taliferro Group" width="120"  />
+                  <img class="logo__img-secondary" src="../../img/general/taliferro-group-white.png" alt="Taliferro Group" width="120"  />
+                  </div></a>
+            </div>
+            <div class="col-auto header__col">
+              <div class="header__burger" id="js-burger" data-arts-cursor="data-arts-cursor" data-arts-cursor-scale="1.7" data-arts-cursor-magnetic="data-arts-cursor-magnetic" data-arts-cursor-hide-native="true">
+                <div class="header__burger-line"></div>
+                <div class="header__burger-line"></div>
+                <div class="header__burger-line"></div>
+              </div>
+            </div>
+            <div class="header__overlay-menu-back" id="js-submenu-back">
+              <div class="arrow arrow-left js-arrow arrow_mini" data-arts-cursor="data-arts-cursor" data-arts-cursor-hide-native="true" data-arts-cursor-scale="0" data-arts-cursor-magnetic="data-arts-cursor-magnetic">
+                <svg class="svg-circle" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+                </svg>
+                <div class="arrow__pointer arrow-left__pointer"></div>
+                <div class="arrow__triangle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__wrapper-overlay-menu container-fluid container-fluid_paddings">
+          <div class="header__wrapper-menu">
+            We Also Speicalize In ...
+            <ul class="menu-overlay js-menu-overlay">
+              <li class="menu-item-has-children"><a class="h2" href="https://machine-learning.taliferro.com/" data-pjax-link="overlayMenu">
+                <div class="menu-overlay__item-wrapper split-text js-split-text" data-split-text-type="lines">Machine Learning</div></a>
+            </li>
+            <li class="menu-item-has-children"><a class="h2" href="https://cloud-architecture-consulting.taliferro.com" data-pjax-link="overlayMenu">
+                  <div class="menu-overlay__item-wrapper split-text js-split-text" data-split-text-type="lines">Cloud Architecture</div></a>
+              </li>
+              <li class="menu-item-has-children"><a class="h2" href="https://api-consulting.taliferro.com" data-pjax-link="overlayMenu">
+                  <div class="menu-overlay__item-wrapper split-text js-split-text" data-split-text-type="lines">APIs</div></a>
+              </li>
+              <li class="menu-item-has-children"><a class="h2" href="https://website-development.taliferro.com" data-pjax-link="overlayMenu">
+                  <div class="menu-overlay__item-wrapper split-text js-split-text" data-split-text-type="lines">Websites  </div></a>
+              </li>
+              <li class="menu-item-has-children"><a class="h2" href="https://e-commerce.taliferro.com" data-pjax-link="overlayMenu">
+                  <div class="menu-overlay__item-wrapper split-text js-split-text" data-split-text-type="lines">eCommerce</div></a>
+              </li>
+              <li class="menu-item-has-children"><a class="h2" href="https://agile.taliferro.com" data-pjax-link="overlayMenu">
+                <div class="menu-overlay__item-wrapper split-text js-split-text" data-split-text-type="lines">Agile Project Management</div></a>
+              </li>    
+            </ul>
+          </div>
+          <div class="header__wrapper-overlay-widgets">
+            <div class="row">
+              <div class="col-lg-4 header__widget">
+                <div class="header__widget-title small-caps js-split-text split-text" data-split-text-type="lines">Contact</div>
+                <div class="header__widget-content js-split-text split-text" data-split-text-type="lines">
+                  <p><a href="mailto:info@taliferro.com">info@taliferro.com</a><br/>+1 206.808.8529<br/>
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 header__widget">
+                <div class="header__widget-title small-caps js-split-text split-text" data-split-text-type="lines">Office</div>
+                <div class="header__widget-content js-split-text split-text" data-split-text-type="lines">
+                  <p>1424 11th Ave Ste 400<br/>Seattle, Wa 98122<br/>USA<br/>
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 header__widget">
+                <div class="header__widget-title small-caps js-split-text split-text" data-split-text-type="lines">Work With Us</div>
+                <div class="header__widget-content js-split-text split-text" data-split-text-type="lines">
+                  <p><a href="https://taliferro.com/contact-taliferro-group">Get in Touch</a><br/>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="js-smooth-scroll bg-light-1" id="page-wrapper" data-barba="container">
+        <main class="page-wrapper__content">
+          <section class="section section-masthead section-masthead_fixed section-fullheight text-center bg-dark-1" data-arts-theme-text="light" data-arts-scroll-fixed="data-arts-scroll-fixed" data-arts-os-animation="data-arts-os-animation" data-background-color="var(--color-dark-1)">
+            <div class="section-masthead__inner section-fullheight__inner container-fluid">
+              <header class="row section-masthead__header justify-content-center">
+                <div class="col">
+                  <div class="section-masthead__meta small-caps mt-0 mb-2">
+<!-- Post Date -->
+                    <div class="section-masthead__meta-item split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
+                      <span sytle="color: white">26 Nov 2022</span>
+                    </div>
+                    <div class="section-masthead__meta-item">
+                      <ul class="section-masthead__meta-categories split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
+                        <li>
+<!-- Category -->
+                          <span sytle="color: white">Website Development</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="w-100"></div>
+<!-- Creating Effective Software Design Specifications: A Guide -->
+                  <div class="section-masthead__heading split-text js-split-text" data-split-text-type="lines,words" data-split-text-set="words">
+                    <h1 class="h1 mt-0 mb-0">Creating Effective Software Design Specifications: A Guide</h1>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="section__headline mt-2 mx-auto"></div>
+                </div>
+              </header>
+            </div>
+            <div class="section-masthead__wrapper-scroll-down section-masthead__wrapper-scroll-down_center">
+              <div class="circle-button js-circle-button">
+                <div class="circle-button__outer">
+                  <div class="circle-button__wrapper-label">
+                    <div class="circle-button__label small-caps">Start Reading</div>
+                  </div>
+                </div>
+                <div class="circle-button__inner">
+                  <div class="circle-button__circle" data-arts-scroll-down="data-arts-scroll-down" data-arts-cursor="data-arts-cursor" data-arts-cursor-hide-native="true" data-arts-cursor-scale="0">
+                    <svg class="svg-circle" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+                    </svg>
+                  </div>
+                  <div class="circle-button__icon circle-button__icon-touch">
+                    <svg enable-background="new 0 0 64 64" height="512" viewBox="0 0 64 64" width="512" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m32 8c-1.104 0-2 .896-2 2v39.899l-14.552-15.278c-.761-.799-2.026-.832-2.828-.069-.8.762-.831 2.027-.069 2.827l16.62 17.449c.756.756 1.76 1.172 2.829 1.172 1.068 0 2.073-.416 2.862-1.207l16.586-17.414c.762-.8.73-2.065-.069-2.827-.799-.763-2.065-.731-2.827.069l-14.552 15.342v-39.963c0-1.104-.896-2-2-2z"></path>
+                    </svg>
+                  </div>
+                  <div class="circle-button__icon circle-button__icon-mouse">
+                    <svg class="svg-mouse" width="23px" height="35px" viewBox="0 0 23 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <path class="svg-mouse__border" d="M11.5,0 C5.15875132,0 0,5.23135343 0,11.6610111 L0,23.3396542 C0,29.7691456 5.15875132,35 11.5,35 C17.8412487,35 23,29.7693119 23,23.3396542 L23,11.6610111 C23,5.23135343 17.8410847,0 11.5,0 Z M21.7222404,23.3396542 C21.7222404,29.0545544 17.136538,33.7037222 11.5,33.7037222 C5.86346203,33.7037222 1.27775956,29.0545544 1.27775956,23.3396542 L1.27775956,11.6610111 C1.27775956,5.946111 5.86346203,1.29627781 11.5,1.29627781 C17.136538,1.29627781 21.7222404,5.94594466 21.7222404,11.6610111 L21.7222404,23.3396542 Z"></path>
+                      <path class="svg-mouse__wheel" d="M11.5,4 C11.2238902,4 11,4.28321727 11,4.63321727 L11,10.3667827 C11,10.7167827 11.2238902,11 11.5,11 C11.7761098,11 12,10.7167827 12,10.3667827 L12,4.63321727 C11.9998717,4.28321727 11.7761098,4 11.5,4 Z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section-image section-masthead__background section-masthead__background_fullscreen">
+              <div class="section-image__wrapper">
+<!-- Article image here -->
+
+                <div class="lazy-bg" data-src="../../img/blog/software-design-guide.webp">
+
+
+                </div>
+              </div>
+              <div class="overlay overlay_dark section-masthead__overlay"></div>
+            </div>
+          </section>
+          <section class="section section-blog pb-medium">
+            <div class="container bg-white pt-small pb-small">
+              <div class="row justify-content-center">
+                <div class="col-lg-10 section-blog__post">
+                  <article class="post">
+                    <div class="post__content clearfix">
+<!-- post content -->
+
+                            <h2> Introduction </h2>
+                            <p> The following is an attempt to put together a complete yet reasonably flexible set of guidelines for a software design specification. Wherever possible, I have provided
+                                guidelines (instead of prescribing requirements) for the contents of various sections and subsections. Some may prefer to require more detailed subsections of a
+                                particular area, choosing one or more of the subsection topics from the list of guidelines provided. This post is a template for a template. I have reviewed information
+                                from many sources: </p>
+                            <ul>
+                                <li> Software Engineering (Pressman, Sommerville, and Van Vliet), Object-Oriented Development (Booch, Rumbaugh, Berard, Wirfs-Brock) </li>
+                                <li> DoD-Std </li>
+                                <li> various SEI reports </li>
+                                <li> Mil-Std documentation requirements (2167/2167A) </li>
+                                <li> IEEE-830 for software requirements </li>
+                                <li> IEEE documentation standards (particularly IEEE-1016 for software designs </li>
+                            </ul>
+                            <p> I tried avoiding assuming or imposing a particular software development methodology or paradigm and emphasizing content more than format. My desire would be that a
+                                completed software design specification meet the following criteria: </p>
+                            <ul>
+                                <li> The guide should help in conveying enough information and understanding about a project implementation. It should be able to serve as training material for new
+                                    project members adequately. The reader can understand what is being said in design meetings and will feel free when they are first asked to create or modify source
+                                    code. </li>
+                                <li> It should serve as "objective evidence" that the designers and implementers are following through on their commitment to implement the functionality described in
+                                    the requirements specification. </li>
+                                <li> It needs to be as detailed as possible while at the same time not imposing too much of a burden on the designers and implementers that it becomes overly difficult
+                                    to create or maintain. </li>
+                            </ul>
+                            <blockquote> Please note that there are no sections in this post describing administrative or business duties or proposing plans or schedules for testing or development.
+                                The areas in this post are concerned solely with the design of the software. While there are places in this post where it is appropriate to discuss the effects of such
+                                plans on the software design, most of the details concerning such procedures belong in one or more separate documents. </blockquote>
+                            <h2 class="text-capitalize"> System Overview </h2>
+                            <p style="color:blue; font-style:italic"> Provide a general description of the software system, including its functionality and matters related to the overall strategy and
+                                its design (perhaps including a discussion of the basic design approach or organization). Feel free to split this up into subsections (and subsubsections, etc ...).
+                            </p>
+                            <h2 class="text-capitalize"> Design Considerations </h2>
+                            <p style="color:blue; font-style:italic"> Describe any issues that need to be addressed or resolved before attempting to devise a complete design solution. </p>
+                            <h2 class="text-capitalize"> Assumptions and Dependencies </h2>
+                            <p style="color:blue; font-style:italic"> Describe any assumptions or dependencies regarding the software and its use. These may concern such issues as: </p>
+                            <ul style="color:blue; font-style:italic">
+                                <li> Related software or hardware </li>
+                                <li> Operating systems </li>
+                                <li> End-user characteristics </li>
+                                <li> Possible and probable changes in functionality </li>
+                            </ul>
+                            <h2 class="text-capitalize"> General Constraints </h2>
+                            <p style="color:blue; font-style:italic"> Describe any global limitations or constraints that significantly impact the design of the system's software (and describe the
+                                associated implications). Such conditions may be imposed by any of the following (the list is not exhaustive): </p>
+                            <ul style="color:blue; font-style:italic">
+                                <li> Hardware or software environment </li>
+                                <li> End-user environment </li>
+                                <li> Availability or volatility of resources </li>
+                                <li> Standards compliance </li>
+                                <li> Interoperability requirements </li>
+                                <li> Interface/protocol requirements </li>
+                                <li> Data repository and distribution requirements </li>
+                                <li> Security requirements (or other such regulations) </li>
+                                <li> Memory and other capacity limitations </li>
+                                <li> Performance requirements </li>
+                                <li> Network communications </li>
+                                <li> Verification and validation requirements (testing) </li>
+                                <li> Other means of addressing quality goals </li>
+                                <li> Other requirements described in the requirements specification </li>
+                            </ul>
+                            <h2 class="text-capitalize"> Goals </h2>
+                            <p style="color:blue; font-style:italic"> Describe any goals, guidelines, principles, or priorities which dominate or embody the design of the system's software. Such goals
+                                might be: </p>
+                            <ul style="color:blue; font-style:italic">
+                                <li> The KISS principle ("Keep it simple stupid!") </li>
+                                <li> Emphasis on speed versus memory use </li>
+                                <li> working, looking, or "feeling" like an existing product </li>
+                            </ul>
+                            <p style="color:blue; font-style:italic"> For each such goal or guideline, unless it is implicitly obvious, describe the reason for its desirability. Feel free to state and
+                                explain each plan in its subsubsection if you wish. </p>
+                            <h2 class="text-capitalize"> Development Methods </h2>
+                            <p style="color:blue; font-style:italic"> Briefly describe the method or approach used for the software design. Provide a brief explanation of why all or part of it was
+                                used or not used. If several methods were seriously considered, each such practice should be mentioned. If one or more formal/published methods were adopted or adapted,
+                                include a reference to a more detailed description of these methods. </p>
+                            <h2 class="text-capitalize"> Architectural Strategies </h2>
+                            <p style="color:blue; font-style:italic"> Describe any design decisions and strategies that affect the overall organization of the system and its higher-level structures.
+                                These strategies should provide insight into the fundamental abstractions and mechanisms used in the system architecture. Describe the reasoning employed for each
+                                decision and procedure (possibly referring to previously stated design goals and principles) and how any design goals or priorities were balanced or traded off. Such
+                                choices might concern (but are not limited to) things like the following: </p>
+                            <ul style="color:blue; font-style:italic">
+                                <li> Use a particular product type (programming language, database, library, etc. ...) </li>
+                                <li> Reuse of existing software components to implement various parts/features of the system </li>
+                                <li> plans for extending or enhancing the software </li>
+                                <li> User interface paradigms (or system input and output models) </li>
+                                <li> Hardware and software interface paradigms </li>
+                                <li> Error detection and recovery </li>
+                                <li> Memory management policies </li>
+                                <li> External databases and <a target="_blank" href="https://www.amazon.com/b?_encoding=UTF8&tag=taliferro2023-20&linkCode=ur2&linkId=b0cf50c24dc4b6f4888b124d2bd6f018&camp=1789&creative=9325&node=1292110011">data storage</a> management and persistence </li>
+                                <li> Distributed data or control over a <a target="_blank" href="https://www.amazon.com/b?_encoding=UTF8&tag=taliferro2023-20&linkCode=ur2&linkId=478548468582b9fce471d3481015a0bc&camp=1789&creative=9325&node=172504">network</a> </li>
+                                <li> Generalized approaches to control </li>
+                                <li> Concurrency and synchronization </li>
+                                <li> Communication mechanisms </li>
+                                <li> Management of other resources </li>
+                            </ul>
+                            <p style="color:blue; font-style:italic"> Each effective strategy employed should be discussed in its subsection or (if it is complex enough) in a separate design document
+                                (with an appropriate reference here). When describing a design decision, make sure that you also discuss any other significant alternatives that were considered and
+                                your reasons for rejecting them (as well as your reasons for accepting the choice you finally chose). Sometimes it may be most effective to employ the "pattern format"
+                                for describing a strategy. </p>
+                            <h2 class="text-capitalize"> System Architecture </h2>
+                            <p style="color:blue; font-style:italic"> This section should provide a high-level overview of how the functionality and responsibilities of the system were partitioned and
+                                then assigned to subsystems or components. Please don't go into too much detail about the individual members themselves (there is a subsequent section for detailed
+                                component descriptions). The primary purpose here is to understand how and why the system was decomposed, and how the individual parts work together to provide the
+                                desired functionality. </p>
+                            <p style="color:blue; font-style:italic"> At the top-most level, describe the software's major responsibilities and the various roles that the system (or portions of the
+                                system) must play. Please explain how the system was broken down into components/subsystems (identifying each top-level component/subsystem and the
+                                roles/responsibilities assigned to it). Describe how the higher-level components collaborate to achieve the required results. Remember to provide some rationale for
+                                choosing this system decomposition (perhaps discussing other proposed decays and why they were rejected). Feel free to use design patterns, either in describing parts
+                                of the architecture (in pattern format) or referring to elements of the architecture that employ them. </p>
+                            <p style="color:blue; font-style:italic"> Suppose there are diagrams, models, flowcharts, documented scenarios, or use cases of the system behavior and structure. In that
+                                case, they may be included here (unless you feel they are complex enough to merit being placed in the Detailed System Design section). Diagrams that describe a
+                                particular component or subsystem should be included within the specific subsection that describes that component or subsystem. </p>
+                            <blockquote> Note: This section (and its subsections) applies only to the system's newly developed (or yet-to-be-developed) portions. Suppose parts of the system already
+                                existed before this development effort began. In that case, you only need to describe the pre-existing features that the new parts of the system depend upon and only in
+                                enough detail to describe the relationships and interactions between the old and new parts. Pre-existing parts that are modified or enhanced need to be related only to
+                                the extent necessary for the reader to understand the nature of the changes that were made. </blockquote>
+                            <h2 class="text-capitalize"> Subsystem Architecture </h2>
+                            <p style="color:blue; font-style:italic"> If a particular component merits a more detailed discussion than what was presented in the System Architecture section, provide
+                                that more detailed discussion in a subsection of the System Architecture section (or it may even be more appropriate to describe the component in its design document).
+                                If necessary, describe how the component was further divided into subcomponents and the relationships and interactions between the subcomponents (similar to what was
+                                done for top-level components in the System Architecture section). </p>
+                            <p style="color:blue; font-style:italic"> If any subcomponents are also deemed to further merit discussion, then describe them in a separate subsection of this section (and
+                                in a similar fashion). Proceed to go into as many levels/subsections of discussion as needed for the reader to gain a high-level understanding of the entire system or
+                                subsystem (but remember to leave the gory details for the Detailed System Design section). </p>
+                            <P style="color:blue; font-style:italic"> Suppose this component is substantial and complex. In that case, consider documenting its design in a separate document and simply
+                                including a reference to it in this section. If this is the option you choose, the design document for this component should have an organizational format that is very
+                                similar (if not identical to) this post. </P>
+                            <h2 class="text-capitalize"> Policies and Tactics </h2>
+                            <p style="color:blue; font-style:italic"> Describe design policies and tactics that do not have sweeping architectural implications. This means the guidelines would not
+                                significantly affect the overall organization of the system and its high-level structures), but affect the interface details and implementation of various aspects of
+                                the system. Such decisions might concern (but are not limited to) things like the following: </p>
+                            <ul style="color:blue; font-style:italic">
+                                <li> Choice of which specific product to use (compiler, interpreter, database, library, etc. ...) </li>
+                                <li> Engineering trade-offs </li>
+                                <li> Coding guidelines and conventions </li>
+                                <li> The protocol of one or more subsystems, modules, or subroutines </li>
+                                <li> The choice of a particular algorithm or programming idiom (or design pattern) to implement portions of the system's functionality </li>
+                                <li> Plans for ensuring requirements traceability </li>
+                                <li> Plans for testing the software </li>
+                                <li> Plans for maintaining the software </li>
+                                <li> Interfaces for end-users, software, hardware, and communications </li>
+                                <li> Hierarchical organization of the source code into its physical components (files and directories). </li>
+                                <li> How to build and generate the system's deliverables (how to compile, link, load, etc. ...) </li>
+                            </ul>
+                            <p style="color:blue; font-style:italic"> Each particular policy or set of tactics employed should probably be discussed in its own subsection or (if it is large or complex
+                                enough) in a separate design document (with an appropriate reference here, of course). When describing a design decision, make sure that you also discuss any other
+                                significant alternatives that were considered and your reasons for rejecting them (as well as your reasons for accepting the choice you finally chose). For this reason,
+                                it may be convenient to use one of the more popular "pattern formats" to describe a given tactic. </p>
+                            <p style="color:blue; font-style:italic"> For this particular section, it may become difficult to decide whether a particular policy or set of tactics should be discussed
+                                in this section, in the System Architecture section, or the Detailed System Design section for the appropriate component. You will have to use your "best" judgment to
+                                decide this. There will usually be some global policies and tactics that should be discussed here. Still, decisions about interfaces, algorithms, and/or data structures
+                                might be more appropriately discussed in the same (sub)section as its corresponding software component in one of these other sections. </p>
+                            <h2 class="text-capitalize"> Detailed System Design </h2>
+                            <p style="color:blue; font-style:italic"> Most components described in the System Architecture section require a more detailed discussion. Other lower-level components and
+                                subcomponents may need to be described as well. Each subsection of this section will refer to or contain a detailed description of a system software component. The
+                                discussion provided should cover the following software component attributes: </p>
+                            <h2 class="text-capitalize"> Classification </h2>
+                            <p style="color:blue; font-style:italic"> The kind of component, such as a subsystem, module, class, package, function, file, etc. </p>
+                            <h2 class="text-capitalize"> Definition </h2>
+                            <p style="color:blue; font-style:italic"> The specific purpose and semantic meaning of the component. This should refer back to the requirements specification. </p>
+                            <h2 class="text-capitalize"> Responsibilities </h2>
+                            <p style="color:blue; font-style:italic"> The primary responsibilities and behavior of this component. What does this component accomplish? What roles does it play? What
+                                kinds of services does it provide to its clients? For some features, this may need to refer back to the requirements specification. </p>
+                            <h2 class="text-capitalize"> Constraints </h2>
+                            <p style="color:blue; font-style:italic"> Any relevant assumptions, limitations, or constraints for this component. This should include restrictions on timing, storage, or
+                                component state and might consist of rules for interacting with this component (encompassing preconditions, postconditions, invariants, other constraints on input or
+                                output values and local or global values, data formats and data access, synchronization, exceptions, etc.) </p>
+                            <h2 class="text-capitalize"> Composition </h2>
+                            <p style="color:blue; font-style:italic"> A description of the use and meaning of the subcomponents that are a part of this component. </p>
+                            <h2 class="text-capitalize"> Uses/Interactions </h2>
+                            <p style="color:blue; font-style:italic"> A description of these components' collaborations with other features. What other components is this entity used? What further
+                                details does this entity use (including any side-effects this entity might have on different parts of the system)? This concerns the method of interaction as well as
+                                the exchange itself. Object-oriented designs should describe any known or anticipated subclasses, superclasses, and metaclasses. </p>
+                            <h2 class="text-capitalize"> Resources </h2>
+                            <p style="color:blue; font-style:italic"> A description of any managed, affected, or needed resources by this entity. This should include discussing possible race
+                                conditions and deadlock situations and how they might be resolved. Resources such as memory, processors, printers, databases, or a software library are external to the
+                                design. </p>
+                            <h2 class="text-capitalize"> Processing </h2>
+                            <p style="color:blue; font-style:italic"> A description of precisely how this component performs the duties necessary to fulfill its responsibilities. This should encompass
+                                a description of any algorithms used; changes of state; appropriate time or space complexity; concurrency; methods of creation, initialization, and cleanup; and
+                                handling of exceptional conditions. </p>
+                            <h2 class="text-capitalize"> Interface/Exports </h2>
+                            <p style="color:blue; font-style:italic"> The set of services (resources, data, types, constants, subroutines, and exceptions) that are provided by this component. The
+                                precise definition or declaration of each such element should be present, along with comments or annotations describing the meanings of values, parameters, etc. ....
+                                For each service element described, include (or provide a reference) in its discussion a description of its important software component attributes (Classification,
+                                Definition, Responsibilities, Constraints, Composition, Uses, Resources, Processing, and Interface). </p>
+                            <p style="color:blue; font-style:italic"> Much of the information in this section is not necessarily expected to be kept separate from the source code. Much of the
+                                information can be gleaned from the source (especially if it is adequately commented). This section should not copy or reproduce information that can be easily obtained
+                                from reading the source code (this would be an unwanted and unnecessary duplication of effort and would be very difficult to keep up-to-date). It is recommended that
+                                most of this information be contained in the source (with appropriate comments for each component, subsystem, module, and subroutine). Hence, it is expected that this
+                                section will primarily consist of references to or excerpts of annotated diagrams and source code. Any referenced charts or source code excerpts should be provided in
+                                any design reviews. </p>
+                            <h2 class="text-capitalize"> Detailed Subsystem Design </h2>
+                            <p style="color:blue; font-style:italic"> Provide a detailed description of this software component (or a reference to such a description). Complex diagrams showing the
+                                details of component structure, behavior, or information/control flow may be included in the subsection devoted to that particular component (although, unless they are
+                                very large or complex, some of these diagrams might be more appropriately included in the System Architecture section. The description should cover any applicable
+                                software component attributes (some of which may be adequately described solely by a source code declaration or excerpt). </p>
+                            <h2 class="text-capitalize"> Glossary </h2>
+                            <p style="color:blue; font-style:italic"> An ordered list of defined terms and concepts used throughout the document. </p>
+                                              
+                    <!-- - post content-->
+                    
+                      <cite>Tyrone Showers</cite><br>
+
+                      <a href="mailto:ty.showers@taliferro.com/"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+                      <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
+                      <a href="https://app.lemcal.com/@tyroneshowers"><i class="fa fa-calendar" aria-label="Book Appointment"></i></a>
+                      <a href="https://www.linkedin.com/in/bookershowers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+
+                    </div>
+                    <!-- post tags -->
+                    <div class="post__tags mt-small">
+                      <div class="tagcloud">
+                        <ul>
+                          <li><em>Software Design Specification</em></li>
+                          <li><em>System Architecture</em></li>
+                          <li><em>Detailed Design</em></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- - post tags -->
+                    <!-- post comments -->
+                    <!-- - post comments -->
+                  </article>
+                  <div class="section-blog__wrapper-pagination">
+                    <nav class="pagination">
+                      <div class="nav-links">
+                        <a class="page-numbers prev material-icons" href="../../nov2022/nov252022/virtual-networks-why-bother.html">keyboard_arrow_left</a>
+                        <div class="nav-links__container">
+
+                        </div>
+                        <a class="page-numbers next material-icons" href="../../nov2022/nov272022/application-architecture.html">keyboard_arrow_right</a>
+                      </div>
+                    </nav>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- - SINGLE POST -->
+        </main>
+        <!-- PAGE FOOTER -->
+        <footer class="footer container-fluid" id="page-footer" data-arts-theme-text="dark" data-arts-footer-logo="primary">
+          <div class="footer__area pt-md-5 pt-sm-3 pb-md-3 pb-sm-1 pt-2 pb-0">
+            <div class="row">
+              <div class="col-lg-5">
+                <section class="widget widget_taliferro_cta">
+                  <h2 class="h2 mt-0 mb-0-5">Stay Connected with Taliferro Group</h2>
+                  <p>Explore the latest in IT innovations and insights with Taliferro Group's blog. Join our community for updates on Agile, Cyber Security, Cloud Computing, and more.</p><p>
+
+                    This title and description are designed to be engaging and informative, inviting readers to stay updated and connected with the range of topics and expertise offered by Taliferro Group. It's also concise enough to fit comfortably in a footer without overwhelming the space.</p>
+                </section>
+              </div>
+              <div class="col-lg-7">
+                <div class="row justify-content-lg-between">
+                  <div class="col-lg-4 col-sm-6 col-12">
+                    <section class="widget widget_nav_menu">
+                      <h2 class="widgettitle">Products</h2>
+                      <ul class="menu js-menu">
+                        <li><a href="https://passwordless.taliferro.com/" target="_blank">Passwordless Sign-In</a>
+                        </li>
+                        <li><a href="https://lis.taliferro.com/" target="_blank">Laboratory Information System</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 col-12">
+                    <section class="widget widget_nav_menu">
+                      <h2 class="widgettitle">About Us</h2>
+                      <ul class="menu js-menu">
+                        <li>
+                          <a href="https://agile.taliferro.com/index.html" target="_blank">Project Behind Schedule?</a>
+                        </li>
+                        <li>
+                          <a href="https://machine-learning.taliferro.com/index.html" target="_blank">Need Additional Revenue?</a>
+                        </li>
+                        <li><a href="https://cloud-architecture-consulting.taliferro.com//index.html" target="_blank">Infrastructure Slow?</a>
+                        </li>
+                        <li><a href="https://taliferro.com/assets/files/taliferro-group-capability-statement.pdf" target="_blank">Capability Statement</a>
+                        </li>
+                        <li><a href="https://taliferro.com/assets/files/taliferro-brochure.pdf" target="_blank">Brochure</a>
+                        </li>
+                        <li>
+                          <a href="https://blog.taliferro.com/rss.xml"><i class="fa fa-rss" aria-hidden="true"></i> RSS</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 col-12">
+                    <section class="widget widget_nav_menu">
+                      <h2 class="widgettitle">Support</h2>
+                      <ul class="menu js-menu">
+                        <li><a href="https://taliferro.com/refund-policy" aria-label="Refund Policy" target="_blank">Refund Policy</a>
+                        </li>
+                        <li><a href="https://taliferro.com/privacy-policy" aria-label="Privacy Policy" target="_blank">Privacy Policy</a>
+                        </li>
+                        <li><a href="https://taliferro.com/terms-of-service" aria-label="Terms" target="_blank">Terms</a>
+                        </li>
+                        <li><a href="https://taliferro.com/contact-taliferro-group" aria-label="Contact" target="_blank">Contact</a>
+                        </li>
+                        <li><a href="tel:2068098529" aria-label="Telphone Number">206.809.8529</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__area footer__area-border-top pt-sm-3 pb-sm-1 pt-2 pb-0">
+            <div class="row align-items-center">
+              <div class="col-lg-4 footer__column text-center text-lg-left order-lg-1">
+                <section class="widget text-center">
+                  <a class="logo" href="http://www.omwbe.wa.gov">
+                    <div class="logo__wrapper-img">
+                      <img src="img/assets/social/OMWBE-Certified-Badge.png" alt="OMWBE Certification Badge" class="img-fluid" style="max-height: 125px;">
+                    </div>
+                  </a>
+                </section>
+              </div>
+              <div class="col-lg-4 footer__column text-center text-lg-right order-lg-3">
+                <section class="widget widget_taliferro_social">
+                  <ul class="social">
+                    <li class="social__item"><a href="https://www.tiktok.com/@taliferrogroup" target="_blank" aria-label="TikTok" title="TikTok"><img class="img-fluid" style="max-height: 50px;"
+                          src="img/assets/social/tiktok-app-icon.svg" alt="TikTok"></a></li>
+                    <li class="social__item"><a href="https://www.instagram.com/taliferrogroup/" target="_blank" aria-label="Instagram"><img class="img-fluid" style="max-height: 50px;"
+                          src="img/assets/social/ig-instagram-icon.svg" alt="Instagram"></a></li>
+                    <li class="social__item"><a href="https://flipboard.com/@taliferrogroup/taliferro-group-0vb37ucdz?from=share&utm_source=flipboard&utm_medium=share" target="_blank"
+                        aria-label="Flipboard" title="Flipboard"><img class="img-fluid" style="max-height: 50px;" src="img/assets/social/flipboard-icon.svg" alt="Flipboard"></a></li>
+                    <li class="social__item"><a href="https://www.linkedin.com/company/taliferro/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><img class="img-fluid" style="max-height: 50px;"
+                          src="img/assets/social/linkedin-app-icon.svg" alt="LinkedIn"></a></li>
+                    <li class="social__item"><a href="https://www.youtube.com/channel/UCbSklLhEDs-4kld584LtdlQ" target="_blank" aria-label="YouTube" title="YouTube"><img class="img-fluid"
+                          style="max-height: 50px;" src="img/assets/social/youtube-app-icon.svg" alt="YouTube"></a></li>
+                    <li class="social__item"><a href="https://www.pinterest.com/tyshowers0160/" target="_blank" aria-label="Pinterest" title="Pinterest"><img class="img-fluid" style="max-height: 50px;"
+                          src="img/assets/social/pinterest-app-icon.svg" alt="Pinterest"></a></li>
+                    <li class="social__item"><a href="https://twitter.com/TaliferroLLC" target="_blank" aria-label="X" title="X"><img class="img-fluid" style="max-height: 50px;"
+                          src="img/assets/social/x-social-media-logo-icon.png" alt="X"></a></li>
+                  </ul>
+                </section>
+              </div>
+              <div class="col-lg-4 footer__column text-center text-lg-center order-lg-2">
+                <section class="widget widget_text">
+                  <div class="textwidget">
+                    <p><small>© 2024 <a href="https://taliferro.com">Taliferro Group</a>. Taliferro Is Registered In The U.S. Patent And Trademark Office.</small></p>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </footer>
+    <!-- - PAGE FOOTER -->
+      </div>
+      <!-- - PAGE MAIN -->
+    </div>
+    <canvas id="js-webgl"></canvas>
+    <!-- PhotoSwipe -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" data-arts-theme-text="light">
+      <!-- background -->
+      <div class="pswp__bg"></div>
+      <!-- - background -->
+      <!-- slider wrapper -->
+      <div class="pswp__scroll-wrap">
+        <!-- slides holder (don't modify)-->
+        <div class="pswp__container">
+          <div class="pswp__item">
+            <div class="pswp__img pswp__img--placeholder"></div>
+          </div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+        <!-- - slides holder (don't modify)-->
+        <!-- UI -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <!-- top bar -->
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)" data-arts-cursor="data-arts-cursor" data-arts-cursor-scale="1.2" data-arts-cursor-magnetic="data-arts-cursor-magnetic" data-arts-cursor-hide-native="true"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen" data-arts-cursor="data-arts-cursor" data-arts-cursor-scale="1.2" data-arts-cursor-magnetic="data-arts-cursor-magnetic" data-arts-cursor-hide-native="true"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- - top bar -->
+          <!-- left arrow -->
+          <div class="pswp__button pswp__button--arrow--left">
+            <div class="arrow arrow-left js-arrow" data-arts-cursor="data-arts-cursor" data-arts-cursor-hide-native="true" data-arts-cursor-scale="0" data-arts-cursor-magnetic="data-arts-cursor-magnetic">
+              <svg class="svg-circle" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+              </svg>
+              <div class="arrow__pointer arrow-left__pointer"></div>
+              <div class="arrow__triangle"></div>
+            </div>
+          </div>
+          <!-- - left arrow -->
+          <!-- right arrow -->
+          <div class="pswp__button pswp__button--arrow--right">
+            <div class="arrow arrow-right js-arrow" data-arts-cursor="data-arts-cursor" data-arts-cursor-hide-native="true" data-arts-cursor-scale="0" data-arts-cursor-magnetic="data-arts-cursor-magnetic">
+              <svg class="svg-circle" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+              </svg>
+              <div class="arrow__pointer arrow-right__pointer"></div>
+              <div class="arrow__triangle"></div>
+            </div>
+          </div>
+          <!-- - right arrow -->
+          <!-- slide caption holder (don't modify) -->
+          <div class="pswp__caption">
+            <div class="pswp__caption__center text-center"></div>
+          </div>
+          <!-- - slide caption holder (don't modify) -->
+        </div>
+        <!-- - UI -->
+      </div>
+      <!-- slider wrapper -->
+    </div>
+    <!-- - PhotoSwipe -->
+    <!-- List Hover Shaders -->
+    <script id="list-hover-vs" type="x-shader/x-vertex">
+      uniform vec2 uOffset;
+      
+      varying vec2 vUv;
+      
+      vec3 deformationCurve(vec3 position, vec2 uv, vec2 offset) {
+        float M_PI = 3.1415926535897932384626433832795;
+        position.x = position.x + (sin(uv.y * M_PI) * offset.x);
+        position.y = position.y + (sin(uv.x * M_PI) * offset.y);
+        return position;
+      }
+      
+      void main() {
+        vUv =  uv + (uOffset * 2.);
+        vec3 newPosition = position;
+        newPosition = deformationCurve(position,uv,uOffset);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );
+      }
+    </script>
+    <script id="list-hover-fs" type="x-shader/x-fragment">
+      uniform sampler2D uTexture;
+      uniform float uAlpha;
+      uniform float uScale;
+      
+      varying vec2 vUv;
+      
+      vec2 scaleUV(vec2 uv,float scale) {
+        float center = 0.5;
+        return ((uv - center) * scale) + center;
+      }
+      
+      void main() {
+        vec3 color = texture2D(uTexture,scaleUV(vUv,uScale)).rgb;
+        gl_FragColor = vec4(color,uAlpha);
+      }
+      
+    </script>
+    <!-- - List Hover Shaders -->
+    <!-- Slider Textures Shaders -->
+    <script id="slider-textures-vs" type="x-shader/x-vertex">
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+      }
+    </script>
+    <script id="slider-textures-horizontal-fs" type="x-shader/x-fragment">
+      varying vec2 vUv;
+      
+      uniform sampler2D texture;
+      uniform sampler2D texture2;
+      uniform sampler2D disp;
+      
+      uniform float dispFactor;
+      uniform float effectFactor;
+      
+      void main() {
+      
+        vec2 uv = vUv;
+      
+        vec4 disp = texture2D(disp, uv);
+      
+        vec2 distortedPosition = vec2(uv.x + dispFactor * (disp.r*effectFactor), uv.y);
+        vec2 distortedPosition2 = vec2(uv.x - (1.0 - dispFactor) * (disp.r*effectFactor), uv.y);
+      
+        vec4 _texture = texture2D(texture, distortedPosition);
+        vec4 _texture2 = texture2D(texture2, distortedPosition2);
+      
+        vec4 finalTexture = mix(_texture, _texture2, dispFactor);
+      
+        gl_FragColor = finalTexture;
+      
+      }
+    </script>
+    <script id="slider-textures-vertical-fs" type="x-shader/x-fragment">
+      varying vec2 vUv;
+      
+      uniform sampler2D texture;
+      uniform sampler2D texture2;
+      uniform sampler2D disp;
+      
+      uniform float dispFactor;
+      uniform float effectFactor;
+      
+      void main() {
+      
+        vec2 uv = vUv;
+      
+        vec4 disp = texture2D(disp, uv);
+      
+        vec2 distortedPosition = vec2(uv.x, uv.y - dispFactor * (disp.r*effectFactor));
+        vec2 distortedPosition2 = vec2(uv.x, uv.y + (1.0 - dispFactor) * (disp.r*effectFactor));
+      
+        vec4 _texture = texture2D(texture, distortedPosition);
+        vec4 _texture2 = texture2D(texture2, distortedPosition2);
+      
+        vec4 finalTexture = mix(_texture, _texture2, dispFactor);
+      
+        gl_FragColor = finalTexture;
+      
+      }
+      
+    </script>
+    <!-- - Slider Textures Shaders -->
+    <!-- VENDOR SCRIPTS -->
+    <script src="../../js/vendor.js"></script>
+    <!-- - VENDOR SCRIPTS -->
+    <!-- COMPONENTS -->
+    <script src="../../js/components.js"></script>
+    <!-- - COMPONENTS -->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=Function.prototype&amp;key=AIzaSyBwR_TrF6h7-pMxkKv_q2t8BXX3w6QuFOc" async></script>
+  </body>
+</html>
