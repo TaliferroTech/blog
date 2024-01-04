@@ -12,7 +12,7 @@ This repository contains the source code for the Taliferro Group Blog. Our blog 
 - `index.html` - The main landing page of the blog.
 - `css/` - Directory containing CSS files for styling the blog.
 - `js/` - Directory containing JavaScript files for interactive functionalities.
-- `assets/` - Directory containing images and other media used in the blog.
+- `img/` - Directory containing images and other media used in the blog.
 
 ## Setup
 1. Clone the repository: `git clone https://github.com/TaliferroGroup/blog.git`
