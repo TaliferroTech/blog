@@ -13,7 +13,7 @@
   <meta name="HandheldFriendly" content="true" />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cinzel:400,700%7CRaleway:500,500i,600,700%7CMaterial+Icons&amp;display=swap" />
   <link rel="stylesheet" type="text/css" href="../../css/vendor.css" />
-  <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/main-min.css" />
   <meta name="author" content="Taliferro Group">
   <meta name="robots" content="index, follow">
   <meta http-equiv="content-language" content="en">
@@ -50,7 +50,7 @@
           "name": "Tyrone Showers"
         },
         "datePublished": "2023-12-18",
-        "dateModified": "2023-12-21",
+        "dateModified": "2024-01-22",
         "publisher": {
           "@type": "Organization",
           "name": "Taliferro Group",
@@ -68,7 +68,7 @@
 
 <body>
   <div data-barba="wrapper">
-    <div class="preloader text-center bg-dark-2" id="js-preloader" data-arts-theme-text="light">
+    <!-- <div class="preloader text-center bg-dark-2" id="js-preloader" data-arts-theme-text="light">
       <div class="preloader__content">
         <div class="preloader__header mt-auto">
           <div class="preloader__heading h2">Taliferro Group</div>
@@ -78,7 +78,7 @@
             class="preloader__counter-number preloader__counter-total">100</span></div>
         <div class="preloader__circle"></div>
       </div>
-    </div>
+    </div> -->
     <svg class="spinner d-lg-none" id="js-spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
       <circle class="spinner__path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
     </svg>
@@ -186,7 +186,7 @@
         </div>
       </div>
       <div class="header__wrapper-overlay-menu container-fluid container-fluid_paddings">
-        <div class="header__wrapper-menu"> We Also Speicalize In ... <ul class="menu-overlay js-menu-overlay">
+        <div class="header__wrapper-menu"> We Also Specialize In ... <ul class="menu-overlay js-menu-overlay">
             <li class="menu-item-has-children"><a class="h2" href="https://machine-learning.taliferro.com/" data-pjax-link="overlayMenu">
                 <div class="menu-overlay__item-wrapper split-text js-split-text" data-split-text-type="lines">Machine Learning</div>
               </a>
@@ -250,13 +250,13 @@
                 <div class="section-masthead__meta small-caps mt-0 mb-2">
                   <!-- Post Date -->
                   <div class="section-masthead__meta-item split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
-                    <span sytle="color: white">7 Dec 2022</span>
+                    <span sytle="color: white">Published: 7 Dec 2022</span>
                   </div>
                   <div class="section-masthead__meta-item">
                     <ul class="section-masthead__meta-categories split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
                       <li>
                         <!-- Category -->
-                        <span sytle="color: white">Website Development</span>
+                        <span sytle="color: white">Updated: 22 Jan 2024</span>
                       </li>
                     </ul>
                   </div>
@@ -320,84 +320,134 @@
                 <article class="post">
                   <div class="post__content clearfix">
                     <!-- post content -->
-                    <h2> Introduction </h2>
-                    <p> When talking about cloud-based applications, we usually talk about microservice architecture. Microservices are easier to deploy and manage than monolithic applications.
-                      However, they still follow the same principles that monolithic apps have used for a long time: abstraction, encapsulation, and separation of concerns. Let's break down what each
-                      of these means in the context of layered application architecture in the cloud. </p>
-                    <h2 class="text-capitalize"> What is a layer? </h2>
-                    <p> A layer is a set of functions and services that perform a specific task. For example, an application may have a user interface layer that handles the presentation of the
-                      information. The data layer is responsible for processing requests, while the business logic layer decides what to do with those requests and how to respond to them. This type of
-                      architecture enables you to add new functionality without affecting existing components in other layers, which makes it easier for you to make changes in your codebase. </p>
-                    <p> When developing software applications, developers need to think about how their code will be organized into logical groups called "layers." Each layer adds value to the overall
-                      application by working together with other layers through well-defined interfaces defined by each component (for example, API endpoints). Layers can be stacked on top of one
-                      another to build up an entire application. This process is known as the modular design, where individual modules interact through well-defined contracts between them so they're
-                      easily replaceable when needed while keeping all their dependencies intact. </p>
-                    <h2 class="text-capitalize"> The basics of a layered architecture </h2>
-                    <p> A layered architecture breaks down an application into separate components, each with a specific responsibility. This can be done in many ways, from simple to very complex. The
-                      most straightforward approach is to break the application up into layers based on their responsibilities and interactions, for example: </p>
-                    <p> Presentation layer - this layer handles the user interface and translates user input into commands for other layers via an API </p>
-                    <p> Business logic layer - this layer contains business rules and processes that are used by one or more applications </p>
-                    <p> Data access/data management layer - this layer manages access to data and provides methods for performing database queries or other tasks related to managing data </p>
-                    <p> The key thing about layering is that each component is independent of all others below it in the stack, which means that changes made at one level won't affect any lower levels
-                      (likewise, changes at lower levels won't affect higher ones). This makes it easier to upgrade individual parts of your system without having to rebuild everything else at once.
-                    </p>
-                    <h2 class="text-capitalize"> Monolith or microservice? </h2>
-                    <p> So, where do you start? Monoliths or microservices? The answer is simple: it depends on your context. While the monolith is more traditional architecture and has been used for
-                      decades in the enterprise, the microservice approach makes sense when you build software with a modern mindset and employ DevOps practices. </p>
-                    <p> If you have an existing code base that cannot be broken apart easily into smaller components and then deployed independently as microservices, then it might make sense to keep
-                      using a monolithic architecture for now—and break up your application into individual microservices in due course as part of an ongoing effort to shift from waterfall development
-                      towards continuous delivery (CD). </p>
-                    <h2 class="text-capitalize"> Layers in the cloud </h2>
-                    <p> The cloud is a natural fit for layered architecture. The cloud provides the infrastructure you can layer your applications and services, thus allowing you to scale up and down
-                      as needed. If one part of your application starts seeing more traffic than expected, you can spin up new servers and services until the demand returns to normal. To be clear: I'm
-                      not advocating that all applications should be built using this type of layered architecture, but it does work well in some cases. For example, if you want to develop an
-                      API-first <a href="https://api-consulting.taliferro.com" title="Learn About Taliferro Group's API Consulting"><strong>API</strong></a> service that offers different functionality based on whether users are logged in or not (e.g., providing access to their profile information versus restricting
-                      access), then having each user session run at its layer makes sense. Each layer has its own set of resources and handles responses differently depending on whether someone is
-                      authenticated. </p>
-                    <h2 class="text-capitalize"> Abstracting Application Cloud Architecture </h2>
-                    <p> The most common form of layered architecture is the three-tier model. It consists of a presentation, service, data layer, and a separate user interface (UI) or application
-                      programming interface (API). </p>
-                    <p> The UI enables users to interact with the software. The API provides programmatic access to the application's functions over an Internet connection. The service layer manages
-                      <a target="_blank"
-                        href="https://www.amazon.com/b?_encoding=UTF8&tag=taliferro2023-20&linkCode=ur2&linkId=b0cf50c24dc4b6f4888b124d2bd6f018&camp=1789&creative=9325&node=1292110011">data
-                        storage</a> and retrieval from databases in different parts of an application's lifecycle. </p>
-                    <p> In a cloud-based environment, developers can use API calls to integrate these services into their applications—reducing complexity since they don't need to manage all
-                      deployment aspects themselves. This leads us back around again: What exactly does cloud mean? </p>
-                    <h2 class="text-capitalize"> Layered applications in the cloud </h2>
-                    <p> In Cloud Computing, a layered architecture is an excellent way to design applications. The same principles can be applied to cloud-based applications as they are used in
-                      monolithic applications, and this is what we will discuss in the following sections. </p>
-                    <p> Cloud Computing allows you to use different types of resources (e.g., CPUs, memory and storage) depending on your needs and at different times, which means that there may not
-                      always be enough resources available for your application in its entirety at any given time. This makes it necessary to split an application into components that use resources
-                      from one or more services independently or sequentially. So let's take a look at how this works for both types of architectures: </p>
-                    <h2 class="text-capitalize"> The problem with SOA and microservices </h2>
-                    <p> You may have heard that SOA and microservices are the same things. They're not. </p>
-                    <p> So what is SOA? It's an architectural pattern that has been around since the late 90s, but it's still relevant today because it allows you to decouple your business logic from
-                      its underlying infrastructure. A service-oriented architecture aims to create loose coupling between services so they can be easily integrated into different parts of your
-                      enterprise architecture (EA). It's important to note that SOA doesn't refer only to technology; it's more about how you structure your application. </p>
-                    <p> Microservices are a set of technologies used for building SOAs—they're not one in the same thing! </p>
-                    <p> Cloud-based applications can follow the same principles that monolithic applications have used for a long time — separation of concerns, abstraction, and modularity. However,
-                      they need to be implemented in a slightly different way. </p>
-                    <p> The main goal is to create self-contained components with clear responsibilities and interfaces. They should be easily reusable because you need to know what problems you will
-                      run into when your application grows. </p>
-                    <p> Microservice architecture, when done correctly, can make the difference between a practical solution and an ineffective one. </p>
-                    <p> Let's break down what microservice architecture is and how it can be used to build more effective solutions. </p>
-                    <p> Microservices are a way of building applications that can scale out. Instead of having a single monolithic application, you have many small ones that perform specific functions
-                      for your system. These more minor services can split themselves up even further into subcomponents if needed, depending on how granular the requirements of each service are. Each
-                      microservice should be able to run independently from other parts of the application or system; this makes it much easier to scale out (or in) by adding or removing instances
-                      when needed — no longer do you need to worry about adding an entirely new <a target="_blank"
-                        href="https://www.amazon.com/b?_encoding=UTF8&tag=taliferro2023-20&linkCode=ur2&linkId=3a64388bbe76b2957e6be89844c315e6&camp=1789&creative=9325&node=11036071">server</a> to
-                      handle some extra load! You can also monitor these smaller components individually for performance issues, so there aren't bottlenecks or hiccups anywhere else in the system.
-                    </p>
-                    <h2> Conclusion </h2>
-                    <p> In this post, I've given you a high-level overview of layered applications. I want to convince you that this approach is not just for legacy codebases but can also be applied
-                      to modern cloud-based applications. As you design your next application or rewrite an old one, think about how splitting it into layers could improve its performance,
-                      scalability, and security. </p>
+
+
+<h2>
+  Layered Architecture
+</h2>
+<p>
+  The buzz often centers around microservice architecture. Microservices have gained popularity due to their ease of deployment and management compared to monolithic applications. However, it's crucial to recognize that microservices still adhere to foundational principles that have been integral to monolithic apps for a substantial period: abstraction, encapsulation, and the separation of concerns. In this article, we delve into the significance of these principles within the context of layered application architecture in the cloud.
+</p>
+<h2>
+  What Is A Layer?
+</h2>
+<p>
+  A layer represents a set of functions and services with a specific role in an application. For instance, an application may encompass a user interface layer responsible for presenting information, a data layer handling requests, and a business logic layer determining how to process and respond to those requests. This architectural approach enables the incorporation of new features without disrupting existing components in other layers, simplifying codebase modifications.
+</p>
+<p>
+  When software developers embark on creating applications, they must contemplate how to structure their code into logical groups termed "layers." Each layer contributes value to the overall application by collaborating seamlessly with other layers through well-defined interfaces, such as API endpoints. These layers can be stacked upon one another to construct a complete application. This process adheres to the modular design philosophy, allowing individual modules to interact through clearly defined contracts, rendering them easily replaceable while preserving their dependencies.
+</p>
+<h2>
+  The Basics Of A Layered Architecture
+</h2>
+<p>
+  A layered architecture dissects an application into distinct components, each bearing a specific responsibility. This division can range from straightforward to intricate. The simplest approach involves segmenting the application based on its responsibilities and interactions:
+</p>
+<ul>
+  <li><strong>Presentation Layer:</strong>
+     This layer manages the user interface and translates user input into commands for other layers through an API.
+  </li>
+  <li><strong>Business Logic Layer:</strong>
+     Here, the business rules and processes are housed, serving one or more applications.
+  </li>
+  <li><strong>Data Access/Data Management Layer:</strong>
+     This layer oversees data access and provides methods for executing database queries and other data-related tasks.
+  </li>
+</ul>
+<p>
+  The essence of layering lies in the autonomy of each component relative to those beneath it in the stack. Changes made at one level do not ripple down to lower levels, and conversely, modifications at lower levels do not impact higher ones. This facilitates individual component upgrades without necessitating the simultaneous reconstruction of the entire system.
+</p>
+<h2>
+  Monolith Or Microservice?
+</h2>
+<p>
+  The decision between monoliths and microservices hinges on context. The traditional monolithic architecture has been a stalwart in enterprise settings for decades, whereas the microservice approach aligns with modern software development practices and DevOps principles.
+</p>
+<p>
+  If you possess an existing codebase that cannot be readily disassembled into smaller, independently deployable microservices, retaining a monolithic architecture may be pragmatic. Subsequently, as part of an ongoing transformation from waterfall development to continuous delivery, you can gradually transition to a microservices architecture.
+</p>
+<h2>
+  Layers In The Cloud
+</h2>
+<p>
+  Layered architecture naturally finds a home in the cloud. Cloud computing furnishes the infrastructure for layering applications and services, facilitating scalability. When a specific segment of your application experiences unexpected surges in traffic, you can swiftly provision new servers and services until equilibrium is restored. It's imperative to note that not all applications warrant this layered architecture, but it does excel in specific scenarios. For example, when developing an API-first service offering diverse functionalities based on user authentication status, each user session can operate within its layer. Each layer possesses its set of resources and tailors responses according to user authentication.
+</p>
+<div class="row gallery">
+  <div class="col-lg-6"><img src="../../img/blog/lets-talk-about-layered-architecture-in-the-cloud1.webp" alt="lets talk about layered architecture in the cloud 1" /></div>
+  <div class="col-lg-6"><img src="../../img/blog/lets-talk-about-layered-architecture-in-the-cloud2.webp" alt="lets talk about layered architecture in the cloud 2" /></div>
+</div>
+
+<h2>
+  Abstracting Application Cloud Architecture
+</h2>
+<p>
+  The prevailing form of layered architecture is the three-tier model. It comprises the presentation, service, and data layers, along with a distinct user interface (UI) or application programming interface (API).
+</p>
+<ul>
+  <li>
+    The UI facilitates user interaction with the software.
+
+  </li>
+  <li>
+    The API extends programmatic access to the application's functions via the internet.
+  </li>
+  <li>
+    The service layer governs data storage and retrieval across various application lifecycle phases.
+  </li>
+</ul>
+<p>
+  In a cloud-based environment, developers can seamlessly integrate these services into their applications through API calls, mitigating complexity as they are relieved of the burden of managing deployment intricacies. This brings us to a fundamental question: What precisely does "cloud" signify?
+</p>
+<h2>
+  Layered Applications In The Cloud
+</h2>
+<p>
+  In the realm of Cloud Computing, layered architecture emerges as an exemplary approach to designing applications. The principles underpinning layered architecture in cloud-based applications mirror those applied in monolithic counterparts, a concept we shall explore further in the following sections.
+</p>
+<p>
+  Cloud Computing empowers the utilization of diverse resources (e.g., CPUs, memory, and storage) depending on fluctuating needs and timelines. This implies that an application may not always have access to sufficient resources for its entirety at any given moment. Consequently, the application must be divided into components capable of independently or sequentially utilizing resources from one or more services. Let's delve into how this concept applies to both architectural paradigms:
+</p>
+<h2>
+  The Problem With SOA And Microservices
+</h2>
+<p>
+  You may have encountered the misconception that Service-Oriented Architecture (SOA) and microservices are interchangeable terms. This is far from accurate.
+</p>
+<p>
+  SOA, an architectural pattern originating in the late '90s, remains relevant today. It excels at decoupling business logic from its underlying infrastructure, fostering loose coupling among services for seamless integration into various aspects of enterprise architecture (EA). Importantly, SOA isn't solely about technology; it revolves around structuring applications effectively.
+</p>
+<p>
+  Microservices, on the other hand, represent a set of technologies employed in building Service-Oriented Architectures—they are not synonymous.
+</p>
+<p>
+  Cloud-based applications can indeed embrace the same core principles that have underpinned monolithic applications for years: the separation of concerns, abstraction, and modularity. However, they necessitate a slightly different implementation approach.
+</p>
+<p>
+  The primary objective is the creation of self-contained components with well-defined responsibilities and interfaces. These components should be highly reusable, considering the challenges that can arise as your application scales.
+</p>
+<p>
+  Microservice architecture, when executed correctly, can distinguish between a pragmatic solution and an ineffectual one.
+</p>
+<h2>
+  Microservices Unveiled
+</h2>
+<p>
+  Microservices present a methodology for constructing applications capable of seamless scaling. Rather than having a single monolithic application, microservices advocate for numerous small services, each dedicated to specific functions within your system. These microservices can further decompose into subcomponents, contingent on the granularity requirements of each service. Each microservice should operate independently, free from reliance on other sections of the application or system. This autonomy facilitates scalability by enabling the addition or removal of instances as needed, eliminating the need to deploy an entirely new server to handle increased loads. Additionally, it allows for individual performance monitoring, ensuring that bottlenecks or disruptions do not propagate throughout the system.
+</p>
+<h2>
+  Conclusion
+</h2>
+<p>
+  I have provided a comprehensive overview of layered applications, emphasizing that this approach extends beyond legacy codebases and remains relevant in the realm of modern cloud-based applications. As you embark on the design of your next application or undertake the overhaul of an existing one, contemplate the advantages of layering for enhanced performance, scalability, and security. Embracing layered architecture in the cloud can pave the way for more robust and adaptable solutions.
+</p>
+
+
                     <!-- - post content-->
                     <cite>Tyrone Showers</cite><br>
                     <a href="mailto:ty.showers@taliferro.com/"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
                     <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
                     <a href="https://app.lemcal.com/@tyroneshowers"><i class="fa fa-calendar" aria-label="Book Appointment"></i></a>
-                    <a href="https://www.linkedin.com/in/bookershowers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+                    <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
                   </div>
                   <!-- post tags -->
                   <div class="post__tags mt-small">
@@ -721,7 +771,7 @@
   <script src="../../js/vendor.js"></script>
   <!-- - VENDOR SCRIPTS -->
   <!-- COMPONENTS -->
-  <script src="../../js/components.js"></script>
+  <script src="../../js/components-min.js"></script>
   <!-- - COMPONENTS -->
   <script src="https://maps.googleapis.com/maps/api/js?callback=Function.prototype&amp;key=AIzaSyBwR_TrF6h7-pMxkKv_q2t8BXX3w6QuFOc" async></script>
 </body>

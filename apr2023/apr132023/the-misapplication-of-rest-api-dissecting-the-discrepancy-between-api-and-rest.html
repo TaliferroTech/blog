@@ -23,7 +23,7 @@
           "name": "Tyrone Showers"
         },
         "datePublished": "2023-04-13",
-        "dateModified": "2023-12-30",
+        "dateModified": "2024-01-04",
         "publisher": {
           "@type": "Organization",
           "name": "Taliferro Group",
@@ -42,7 +42,7 @@
   <meta name="HandheldFriendly" content="true" />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cinzel:400,700%7CRaleway:500,500i,600,700%7CMaterial+Icons&amp;display=swap" />
   <link rel="stylesheet" type="text/css" href="../../css/vendor.css" />
-  <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/main-min.css" />
   <meta name="author" content="Taliferro Group">
   <meta name="robots" content="index, follow">
   <meta http-equiv="content-language" content="en">
@@ -187,7 +187,7 @@
         </div>
       </div>
       <div class="header__wrapper-overlay-menu container-fluid container-fluid_paddings">
-        <div class="header__wrapper-menu"> We Also Speicalize In ... <ul class="menu-overlay js-menu-overlay">
+        <div class="header__wrapper-menu"> We Also Specialize In ... <ul class="menu-overlay js-menu-overlay">
             <li class="menu-item-has-children"><a class="h2" href="https://machine-learning.taliferro.com/" data-pjax-link="overlayMenu">
                 <div class="menu-overlay__item-wrapper split-text js-split-text" data-split-text-type="lines">Machine Learning</div>
               </a>
@@ -322,61 +322,46 @@
                   <div class="post__content clearfix">
                     <!-- post content -->
                     <h2> Introduction </h2>
-                    <p> In the contemporary digital communication landscape, the term "REST API" has become virtually ubiquitous, permeating the lexicon of developers and technologists alike. However,
-                      this seemingly innocuous phrase harbors a fundamental incongruity that belies the original intent of its progenitor, Roy Fielding. In this post, I shall delve into the reasons
-                      for my aversion to the term "REST API," examine the conceptual distinctions between API and REST and elucidate the implications of this misnomer within web-based communication.
-                    </p>
-                    <h2 class="text-capitalize"> The Genesis of REST </h2>
-                    <p> To comprehend the dissonance engendered by the term "REST API," it is essential to revisit the genesis of REST, an architectural style conceived by Roy Fielding in his seminal
-                      dissertation. The term REST, an acronym for Representational State Transfer, encapsulates a set of principles and constraints that collectively furnish a framework for designing
-                      scalable, efficient, and resilient web-based communication systems. </p>
-                    <p> The core tenets of REST include stateless communication, client-server separation, cacheability, a layered system architecture, and a uniform interface. Stateless communication
-                      mandates that each request from a client to a <a target="_blank"
-                        href="https://www.amazon.com/b?_encoding=UTF8&tag=taliferro2023-20&linkCode=ur2&linkId=3a64388bbe76b2957e6be89844c315e6&camp=1789&creative=9325&node=11036071">server</a> must
-                      contain all the requisite information to comprehend and process the request, thereby precluding the need for the <a target="_blank"
-                        href="https://www.amazon.com/b?_encoding=UTF8&tag=taliferro2023-20&linkCode=ur2&linkId=3a64388bbe76b2957e6be89844c315e6&camp=1789&creative=9325&node=11036071">server</a> to
-                      maintain client context between requests. Client-<a target="_blank"
-                        href="https://www.amazon.com/b?_encoding=UTF8&tag=taliferro2023-20&linkCode=ur2&linkId=3a64388bbe76b2957e6be89844c315e6&camp=1789&creative=9325&node=11036071">server</a>
-                      separation entails decoupling user interface concerns from <a target="_blank"
-                        href="https://www.amazon.com/b?_encoding=UTF8&tag=taliferro2023-20&linkCode=ur2&linkId=b0cf50c24dc4b6f4888b124d2bd6f018&camp=1789&creative=9325&node=1292110011">data
-                        storage</a> and processing, engendering modularity and flexibility. Cacheability necessitates the inclusion of explicit cache directives, optimizing the performance and
-                      responsiveness of the system. The layered system architecture enables the segmentation of functionality, fostering abstraction and extensibility. Finally, the uniform interface,
-                      predicated on standardized conventions and semantics, facilitates seamless interoperability and consistency across diverse systems. </p>
-                    <h2 class="text-capitalize"> The Nature of APIs </h2>
-                    <p> Conversely, API, or Application Programming Interface, denotes a set of rules, protocols, and tools that enable disparate software applications to communicate. APIs furnish a
-                      structured medium through which developers can access an application or service's functionalities, bypassing the underlying implementation's intricacies. By adhering to the
-                      conventions and specifications delineated by an API, developers can leverage preexisting capabilities, promote code reuse, and foster a modular, extensible system architecture.
-                    </p>
-                    <h2 class="text-capitalize"> The Discrepancy between API and REST </h2>
-                    <p> The crux of my aversion to the term "REST API" lies in the disjunction between the essence of REST as an architectural style and the implementation of APIs in practice. While
-                      REST furnishes a set of principles and constraints that engender scalable, efficient, and resilient communication systems, APIs often diverge from these tenets, adopting
-                      alternative paradigms or exhibiting partial adherence to the RESTful constraints. </p>
-                    <p> For instance, numerous so-called "REST APIs" exhibit a proclivity for deviating from the principle of stateless communication, opting instead for session-based or stateful
-                      interactions that undermine the scalability and resilience of the system. Similarly, many APIs neglect to adhere to the uniform interface constraint, employing ad hoc conventions
-                      or semantics that engender inconsistencies and impede seamless interoperability. </p>
-                    <p> Furthermore, the conflation of REST with HTTP, a standard protocol for implementing RESTful systems, has led to the misconception that all HTTP-based APIs are inherently
-                      RESTful, thereby perpetuating the misapplication of the term "REST API." The term "REST API" has thus become somewhat of a misnomer, frequently employed to denote APIs that only
-                      partially adhere to Fielding's original vision. This misapprehension has engendered a degree of conceptual dissonance within web-based communication, undermining the efficacy of
-                      REST as an architectural style and fostering confusion among developers and technologists. </p>
-                    <h2 class="text-capitalize"> Implications </h2>
-                    <p> The pervasive misapplication of the term "REST API" bears several implications for the broader landscape of web-based communication. Firstly, the conflation of REST with APIs
-                      that deviate from its core principles may dilute the efficacy of Fielding's architectural style, obscuring its original intent and engender confusion among developers.
-                      Consequently, the development of scalable, efficient, and resilient communication systems may be hindered by this conceptual dissonance. </p>
-                    <p> Secondly, the prevalence of the term "REST API" may inadvertently perpetuate the misconception that REST is synonymous with HTTP, undermining the recognition of alternative
-                      protocols or architectural styles that may prove equally, if not more, effective in specific contexts. This myopic focus on REST may impede innovation and experimentation within
-                      web-based communication, stifling the evolution of novel, optimized solutions. </p>
-                    <h2> Conclusion </h2>
-                    <p> My aversion to the term "REST API" stems from the fundamental discrepancy between the essence of REST as an architectural style and the implementation of APIs in practice. This
-                      incongruity engenders a degree of conceptual dissonance that undermines the efficacy of REST and fosters confusion among developers and technologists. To rectify this
-                      misapprehension, it is incumbent upon the technology community to recognize and acknowledge the distinctions between <a href="https://api-consulting.taliferro.com/">API</a> and
-                      REST and strive for a more nuanced understanding of web-based communication paradigms. By doing so, we can foster a more informed, innovative, and collaborative landscape that
-                      aligns with Fielding's original vision for REST. </p>
+<p>
+  The term "REST <a href="https://api-consulting.taliferro.com"><strong>API</strong></a>" is commonly used in digital communication, yet it often misrepresents the concept envisioned by its creator, Roy Fielding. This article will explore why the term "REST API" is misleading, clarify the differences between APIs and REST, and discuss the impact of this misunderstanding in web communication.
+</p>                    
+<h2>
+  The Genesis of REST
+</h2>
+<p>
+  REST, or Representational State Transfer, is an architectural style developed by Roy Fielding in his dissertation. It outlines principles for creating scalable, efficient, and resilient web communication systems. These principles include stateless communication, client-server separation, cacheability, layered system architecture, and a uniform interface. Each principle plays a crucial role in the design of effective web systems, ensuring modularity, flexibility, and consistency.
+</p>
+<h2>
+  The Nature of APIs
+</h2>
+<p>
+  <a href="https://api-consulting.taliferro.com"><strong>API</strong></a>s, or Application Programming Interfaces, are sets of rules that allow different software applications to interact. They provide a structured way for developers to access functionalities of an application, focusing on facilitating communication between different software components.
+</p>
+<h2>
+  The Discrepancy Between API and REST
+</h2>
+<p>
+  The issue with the term "REST <a href="https://api-consulting.taliferro.com"><strong>API</strong></a>" arises from the difference between REST as a design philosophy and the practical implementation of APIs. While REST sets a framework for efficient communication systems, many APIs do not fully adhere to these principles. Common deviations include stateful interactions and inconsistent interfaces, which can compromise system scalability and interoperability.
+</p>
+<h2>
+  Implications
+</h2>
+<p>
+  Misusing the term "REST API" has several consequences. It can dilute the original intent of REST, leading to confusion and less effective communication systems. Additionally, equating REST with HTTP can limit the recognition of other suitable protocols, potentially hindering innovation in web communication.
+</p>
+<h2>
+  Conclusion
+</h2>
+<p>
+  The discrepancy between the concept of REST and the practical use of <a href="https://api-consulting.taliferro.com"><strong>API</strong></a>s leads to confusion and undermines the effectiveness of web communication systems. Recognizing and understanding the differences between API and REST is crucial for developing better communication paradigms and aligning with Fielding's vision for REST.
+</p>
+
                     <!-- - post content-->
                     <cite>Tyrone Showers</cite><br>
                     <a href="mailto:ty.showers@taliferro.com/"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
                     <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
                     <a href="https://app.lemcal.com/@tyroneshowers"><i class="fa fa-calendar" aria-label="Book Appointment"></i></a>
-                    <a href="https://www.linkedin.com/in/bookershowers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+                    <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
                   </div>
                   <!-- post tags -->
                   <div class="post__tags mt-small">
@@ -698,7 +683,7 @@
   <script src="../../js/vendor.js"></script>
   <!-- - VENDOR SCRIPTS -->
   <!-- COMPONENTS -->
-  <script src="../../js/components.js"></script>
+  <script src="../../js/components-min.js"></script>
   <!-- - COMPONENTS -->
   <script src="https://maps.googleapis.com/maps/api/js?callback=Function.prototype&amp;key=AIzaSyBwR_TrF6h7-pMxkKv_q2t8BXX3w6QuFOc" async></script>
 </body>
